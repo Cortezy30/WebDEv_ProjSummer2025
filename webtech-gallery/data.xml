@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<library>
+    <book>
+        <title>Web Development 101</title>
+        <author>Jane Doe</author>
+    </book>
+    <book>
+        <title>Learning PHP</title>
+        <author>John Smith</author>
+    </book>
+</library>

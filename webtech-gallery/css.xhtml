@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Styling with CSS - WebTech Gallery</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <style type="text/css">
+        .unstyled {
+            background-color: #f2f2f2;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+
+        .styled {
+            background-color: #eafaf1;
+            border: 2px solid #27ae60;
+            padding: 15px;
+            font-family: 'Segoe UI', sans-serif;
+            color: #2c3e50;
+            border-radius: 8px;
+            box-shadow: 2px 2px 5px #aaa;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Styling with CSS</h1>
+
+        <p>CSS (Cascading Style Sheets) is used to control the look and feel of a website. It separates content from presentation, allowing for cleaner, more maintainable code.</p>
+
+        <h2>Basic Styling Example</h2>
+        <p class="unstyled">This paragraph is plain and has minimal styling.</p>
+        <p class="styled">This paragraph is styled using CSS. Notice the custom font, padding, background, and border effects.</p>
+
+        <h2>CSS Syntax Example:</h2>
+        <pre>
+p {
+    color: blue;
+    font-size: 16px;
+    margin: 10px;
+}
+        </pre>
+
+        <p><strong>Selectors</strong> (e.g., <code>p</code>) target elements, and <strong>declarations</strong> apply styles using <code>property: value;</code> pairs.</p>
+
+        <p><a href="index.html">← Back to Home</a></p>
+
+        <div id="footer">
+            <p>&copy; 2025 WebTech Gallery | Summer Project</p>
+        </div>
+    </div>
+</body>
+</html>

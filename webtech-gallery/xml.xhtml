@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>XML Demo - WebTech Gallery</title>
+    <script type="text/javascript">
+        function loadXML() {
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "data.xml", true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    var xmlDoc = xhr.responseXML;
+                    var output = "<ul>";
+                    var items = xmlDoc.getElementsByTagName("book");
+                    for (var i = 0; i < items.length; i++) {
+                        var title = items[i].getElementsByTagName("title")[0].childNodes[0].nodeValue;
+                        var author = items[i].getElementsByTagName("author")[0].childNodes[0].nodeValue;
+                        output += "<li><strong>" + title + "</strong> by " + author + "</li>";
+                    }
+                    output += "</ul>";
+                    document.getElementById("output").innerHTML = output;
+                }
+            };
+            xhr.send(null);
+        }
+    </script>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+</head>
+<body onload="loadXML();">
+    <div id="container">
+        <h1>XML Integration</h1>
+
+        <p>This page demonstrates loading XML data using JavaScript and displaying it dynamically using the DOM.</p>
+
+        <h2>Book List Loaded from XML:</h2>
+        <div id="output">
+            <p>Loading...</p>
+        </div>
+
+        <h2>Sample XML File (`data.xml`):</h2>
+        <pre>
+&amp;lt;?xml version="1.0"?&amp;gt;
+&amp;lt;library&amp;gt;
+    &amp;lt;book&amp;gt;
+        &amp;lt;title&amp;gt;Web Development 101&amp;lt;/title&amp;gt;
+        &amp;lt;author&amp;gt;Jane Doe&amp;lt;/author&amp;gt;
+    &amp;lt;/book&amp;gt;
+    &amp;lt;book&amp;gt;
+        &amp;lt;title&amp;gt;Learning PHP&amp;lt;/title&amp;gt;
+        &amp;lt;author&amp;gt;John Smith&amp;lt;/author&amp;gt;
+    &amp;lt;/book&amp;gt;
+&amp;lt;/library&amp;gt;
+</pre>
+
+
+        <p><a href="index.html">← Back to Home</a></p>
+
+        <div id="footer">
+            <p>&copy; 2025 WebTech Gallery | Summer Project</p>
+        </div>
+    </div>
+</body>
+</html>

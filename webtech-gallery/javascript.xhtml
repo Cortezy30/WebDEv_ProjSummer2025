@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>JavaScript &amp; DHTML - WebTech Gallery</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <script type="text/javascript">
+        function showTime() {
+            var now = new Date();
+            var timeString = now.toLocaleTimeString();
+            document.getElementById("clock").firstChild.nodeValue = timeString;
+        }
+
+        function changeColor() {
+            var colors = ["#f6e58d", "#ffbe76", "#ff7979", "#7ed6df", "#badc58"];
+            var randomIndex = Math.floor(Math.random() * colors.length);
+            document.getElementById("colorBox").style.backgroundColor = colors[randomIndex];
+        }
+
+        function toggleParagraph() {
+            var para = document.getElementById("toggleText");
+            if (para.style.display === "none") {
+                para.style.display = "block";
+            } else {
+                para.style.display = "none";
+            }
+        }
+
+        window.onload = function () {
+            setInterval(showTime, 1000);
+        };
+    </script>
+</head>
+<body>
+    <div id="container">
+        <h1>JavaScript &amp; DHTML</h1>
+
+        <p>JavaScript enables interactivity in web pages. Combined with the DOM (Document Object Model), it forms the basis of Dynamic HTML (DHTML), allowing pages to change without reloading.</p>
+
+        <h2>Live Clock Example:</h2>
+        <p>The current time is: <span id="clock">Loading...</span></p>
+
+        <h2>Color Box Example:</h2>
+        <div id="colorBox" style="width:150px; height:100px; border:1px solid #333;"></div>
+        <button type="button" onclick="changeColor()">Change Color</button>
+
+        <h2>Toggle Visibility Example:</h2>
+        <button type="button" onclick="toggleParagraph()">Show/Hide Text</button>
+        <p id="toggleText" style="display:block;">This is a paragraph that can be shown or hidden with JavaScript.</p>
+
+        <h2>JavaScript Syntax Example:</h2>
+        <pre>
+function greet() {
+    alert("Hello, world!");
+}
+        </pre>
+
+        <p><a href="index.html">← Back to Home</a></p>
+
+        <div id="footer">
+            <p>&copy; 2025 WebTech Gallery | Summer Project</p>
+        </div>
+    </div>
+</body>
+</html>
